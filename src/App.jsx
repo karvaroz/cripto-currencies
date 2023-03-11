@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Fragment, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Form from "./components/Form";
 import Result from "./components/Result";
 import Spinner from "./components/Spinner";
@@ -34,7 +34,7 @@ const Heading = styled.h1`
 
 	&::after {
 		content: "";
-		width: 100%;
+		width: 100px;
 		height: 6px;
 		background-color: #66a2fe;
 		display: block;
@@ -69,12 +69,12 @@ function App() {
 				src={ImgCripto}
 				alt="criptocurrencies"
 			/>
-			<Fragment>
+			<div>
 				<Heading>Cotiza Criptomonedas al Instante</Heading>
 				<Form setCurrencies={setCurrencies} />
 				{loading && <Spinner />}
 				{infoResults.PRICE && <Result infoResults={infoResults} />}
-			</Fragment>
+			</div>
 		</Container>
 	);
 }
